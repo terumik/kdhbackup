@@ -1,0 +1,59 @@
+﻿/*@media (min-width: 544px) {
+    .rfont {
+        font-size: 1.5rem;
+        color:blue;
+    }
+}*/
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+/*@media (min-width: 768px) {
+    .rfont {
+        font-size: 2rem;
+        color: purple;
+    }
+}*/
+
+/* Large devices (desktops, 992px and up) */
+/*@media (min-width: 992px) {
+    .rfont {
+        font-size: 3rem;
+        color: magenta;
+    }
+}*/
+
+/* Extra large devices (large desktops, 1200px and up) */
+/*@media (min-width: 1200px) {
+    .rfont {
+        font-size: 3rem;
+        color: red;
+    }
+}*/
+ 
+
+
+#header {
+    background-color: #20396d;
+    font-family: Lato;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+}
+
+#body {
+    font-family: Lato;
+    letter-spacing: 0.05rem;
+    line-height: 1.5rem;
+}
+
+#footer {
+    background-color: #20396d;
+    color: white;
+    font-family: Lato;
+    letter-spacing: 0.1rem;
+}
+#footer a {
+    color: white;
+}
+
+#navigation {
+    background-color: #17429b;
+}

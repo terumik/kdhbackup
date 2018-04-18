@@ -1,0 +1,27 @@
+﻿@model kdh.Models.FAQsPurposes
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center text-dark">Frequently Asked Questions(FAQ)</h2>
+
+
+<ul>
+    @foreach (var item in Model.Faqs)
+    {
+        <li>
+            <span class="font-weight-bold">
+                @Html.DisplayNameFor(model => item.Question):</span> @Html.DisplayFor(modelItem => item.Question) <br />
+            <span class="font-weight-bold">
+                @Html.DisplayNameFor(model => item.Answer):</span> @Html.DisplayFor(modelItem => item.Answer) <br />
+            <span class="font-weight-bold"> @Html.DisplayNameFor(model => item.DateCreated):</span> @Html.DisplayFor(modelItem => item.DateCreated) <br />
+            <hr />
+
+</li>
+    }
+</ul>
+
+
+

@@ -1,0 +1,53 @@
+﻿@model kdh.ViewModels.PatientProfileVM
+
+@{
+    ViewBag.Title = "ViewProfile";
+    Layout = "~/Views/Shared/PatientPortal/_PatientPortal.cshtml";
+}
+
+<h2>View Profile</h2>
+
+<div class="card my-3">
+    <div class="card-header">
+        <span class="h5">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) (@Html.DisplayFor(model => model.Gender))</span>
+    </div>
+    <div class="card-body">
+        <div class="card-text">
+            Date of Birth:
+            @if (Model.DateOfBirth.HasValue)
+            {
+                string d = Model.DateOfBirth.ToString();
+                d = d.Substring(0, d.Length - 11);
+                <span>@d</span>
+
+            }
+            else
+            {
+                <span>N/A</span>
+            }
+        </div>
+        <div class="card-text">Gender: @Model.Gender</div>
+        <div class="card-text">OHIP: @Html.DisplayFor(model => model.HealthCardNumber)</div>
+        <div class="card-text">Address1: @Html.DisplayFor(model => model.Address1)</div>
+        <div class="card-text">Address2: @Html.DisplayFor(model => model.Address2)</div>
+        <div class="card-text">City: @Html.DisplayFor(model => model.City)</div>
+        <div class="card-text">Province: @Html.DisplayFor(model => model.Province)</div>
+        <div class="card-text">Postal Code: @Html.DisplayFor(model => model.PostalCode)</div>
+        <div class="card-text">Phone: @Html.DisplayFor(model => model.Phone)</div>
+        <div class="card-text">Email: @Html.DisplayFor(model => model.Email)</div>
+        
+        <div>
+            <a href="@Url.Action("EditProfile")" class="btn btn-outline-primary btn-sm ml-2 my-3 col-md-4">Update Profile</a>
+            <a href="@Url.Action("UpdateAccount")" class="btn btn-outline-primary btn-sm ml-2 my-3 col-md-4">Update Login Information</a>
+        </div>
+        <div>
+            <a href="@Url.Action("DeleteConfirmation")" class="btn btn-outline-danger btn-sm ml-2 my-3 col-md-4">Delete Online Account</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+

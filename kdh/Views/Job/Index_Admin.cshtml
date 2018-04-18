@@ -1,0 +1,42 @@
+﻿@model IEnumerable<kdh.Models.Job>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Job list</h2>
+
+<p>
+    @Html.ActionLink("Create new Job", "Create")
+</p>
+@foreach (var item in Model)
+{
+    <div>
+        <h3>@Html.DisplayNameFor(model => model.JobId): @item.JobId</h3>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { job_id = item.JobId }) |
+            @Html.ActionLink("Details", "Details_Admin", new { job_id = item.JobId }) |
+            @Html.ActionLink("Delete", "Delete", new { job_id = item.JobId })
+        </div>
+        <dl class="dl-horizontal row">
+
+            <dt class="col-2">@Html.DisplayNameFor(model => model.JobTitle):</dt>
+            <dd class="col-4">@Html.DisplayFor(modelItem => item.JobTitle)</dd>
+            <dt class="col-2">@Html.DisplayNameFor(model => model.JobStatus)</dt>
+            <dd class="col-4">@Html.DisplayFor(modelItem => item.JobStatus)</dd>
+            <dt class="col-4 col-md-2">@Html.DisplayNameFor(model => model.DepartmentId)</dt>
+            <dd class="col-8 col-md-10">@Html.DisplayFor(modelItem => item.department.department_name)</dd>
+            <dt class="col-2">@Html.DisplayNameFor(model => model.DatePosted)</dt>
+            <dd class="col-4">@Html.DisplayFor(modelItem => item.DatePosted)</dd>
+            <dt class="col-2">@Html.DisplayNameFor(model => model.DateClosed)</dt>
+            <dd class="col-4">@Html.DisplayFor(modelItem => item.DateClosed)</dd>
+            <dt class="col-2">@Html.DisplayNameFor(model => model.User.Email)</dt>
+            <dd class="col-10">@Html.DisplayFor(modelItem => item.User.Email)</dd>
+
+            @*<div>@Html.DisplayNameFor(model => model.JobDescription): @Html.DisplayFor(modelItem => item.JobDescription)</div>*@
+            @*<div>@Html.DisplayNameFor(model => model.JobShift): @Html.DisplayFor(modelItem => item.JobShift)</div>*@
+            @*<div>@Html.DisplayNameFor(model => model.Salary): @Html.DisplayFor(modelItem => item.Salary)</div>*@
+            @*<div>@Html.DisplayNameFor(model => model.Requirement): @Html.DisplayFor(modelItem => item.Requirement)</div>*@
+        </dl>
+    </div>
+}
